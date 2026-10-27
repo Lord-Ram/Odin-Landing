@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foxly | Clever tools for curious people</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dark">
+    <!-- Animated running fox background -->
+    <div class="fox-bg" aria-hidden="true">
+      <div class="stars"></div>
+      <div class="hills hills-back"></div>
+      <div class="hills hills-front"></div>
+      <div class="fox-runner">
+        <svg class="fox" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ffa34d"/><stop offset="1" stop-color="#e2581b"/>
+            </linearGradient>
+          </defs>
+          <g class="tail"><path d="M60 52 C30 30 5 40 2 62 C20 58 35 66 60 64 Z" fill="url(#fur)"/><path d="M2 62 C10 56 18 56 24 60 C14 66 8 66 2 62Z" fill="#fff4e6"/></g>
+          <g class="leg back-a"><rect x="66" y="66" width="9" height="34" rx="4" fill="#e2581b"/><rect x="65" y="94" width="11" height="8" rx="4" fill="#3a2418"/></g>
+          <g class="leg front-a"><rect x="138" y="66" width="9" height="34" rx="4" fill="#e2581b"/><rect x="137" y="94" width="11" height="8" rx="4" fill="#3a2418"/></g>
+          <ellipse cx="105" cy="60" rx="50" ry="20" fill="url(#fur)"/>
+          <path d="M120 72 C135 74 148 70 152 62 L140 76 Z" fill="#fff4e6"/>
+          <g class="leg back-b"><rect x="76" y="66" width="9" height="34" rx="4" fill="#ff8a3d"/><rect x="75" y="94" width="11" height="8" rx="4" fill="#3a2418"/></g>
+          <g class="leg front-b"><rect x="128" y="66" width="9" height="34" rx="4" fill="#ff8a3d"/><rect x="127" y="94" width="11" height="8" rx="4" fill="#3a2418"/></g>
+          <g class="head">
+            <path d="M145 38 L160 12 L168 36 Z" fill="#e2581b"/><path d="M162 36 L178 10 L182 38 Z" fill="#ff8a3d"/>
+            <path d="M140 50 C145 30 180 28 188 44 L214 54 C210 62 196 64 180 64 C160 66 146 62 140 50Z" fill="url(#fur)"/>
+            <path d="M170 58 L214 54 C208 62 196 66 176 64Z" fill="#fff4e6"/>
+            <circle cx="214" cy="54" r="4" fill="#2a1a12"/><circle cx="178" cy="44" r="3.2" fill="#2a1a12"/>
+          </g>
+        </svg>
+        <div class="fox-shadow"></div>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="logo"><span class="logo-mark">🦊</span> Foxly</div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Quick. Clever.<br>Curiously fox-like.</h1>
+        <p>Foxly is the friendly toolkit that helps small teams move fast, stay safe and work smarter — without the clutter.</p>
+        <a href="#" class="btn">Sign up</a>
+      </div>
+      <div class="hero-card tilt">
+        <img src="images/hero-fox.jpg" alt="A friendly 3D fox mascot">
+      </div>
+    </section>
+  </div>
+
+  <section class="info">
+    <h2>Some random information.</h2>
+    <div class="cards">
+      <div class="card tilt"><img src="images/rocket.jpg" alt="Rocket"><p>Launch new projects in minutes, not weeks.</p></div>
+      <div class="card tilt"><img src="images/shield.jpg" alt="Shield"><p>Your data is guarded like a fox guards its den.</p></div>
+      <div class="card tilt"><img src="images/bolt.jpg" alt="Lightning bolt"><p>Blazing fast tools that never slow you down.</p></div>
+      <div class="card tilt"><img src="images/heart.jpg" alt="Heart"><p>Loved by thousands of curious teams worldwide.</p></div>
+    </div>
+  </section>
+
+  <section class="quote">
+    <blockquote>
+      <p>“The fox knows many things — and with Foxly, so does your whole team.”</p>
+      <cite>— Archilochus, sort of</cite>
+    </blockquote>
+  </section>
+
+  <section class="cta-wrap">
+    <div class="cta tilt">
+      <div>
+        <h3>Call to action! It's time!</h3>
+        <p>Join Foxly today and give your team a clever little edge.</p>
+      </div>
+      <a href="#" class="btn btn-outline">Sign up</a>
+    </div>
+  </section>
+
+  <footer class="footer">Copyright © Foxly 2026</footer>
+
+  <script>
+    // Subtle 3D tilt that follows the mouse
+    document.querySelectorAll('.tilt').forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        el.style.transform = `perspective(900px) rotateY(${x * 14}deg) rotateX(${-y * 14}deg) translateZ(10px)`;
+      });
+      el.addEventListener('mouseleave', () => { el.style.transform = ''; });
+    });
+  </script>
+</body>
+</html>
