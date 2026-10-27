@@ -4,4 +4,4 @@ A landing page built with plain HTML & CSS, featuring an animated running fox ba
 
 ## Image credits
 All images (fox mascot and 3D icons) were AI-generated for this project and are free to use.
-Font: Roboto by Google Fonts.
+Font: Sora by Google Fonts.
